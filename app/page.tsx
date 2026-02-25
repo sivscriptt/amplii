@@ -1,65 +1,56 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+const flows = [
+  { section: "Shared", items: [
+    { href: "/login", label: "1. Authentication", desc: "Magic link → OTP → verified" },
+    { href: "/onboarding", label: "2. Onboarding", desc: "Role → profile → wallet/tier → ready" },
+    { href: "/rate", label: "3. Ratings", desc: "Star rating + tags + comment" },
+  ]},
+  { section: "Business", items: [
+    { href: "/gigs/create", label: "4. Gig Creation", desc: "Basics → reward → settings → publish" },
+    { href: "/applications", label: "5. Application Review", desc: "Accept/reject applicants" },
+    { href: "/scanner", label: "6. QR Scanner", desc: "Scan QR → verify visit" },
+    { href: "/submissions", label: "7. Submissions", desc: "View content/feedback" },
+    { href: "/wallet", label: "8. Wallet", desc: "Balance, escrow, fund" },
+    { href: "/disputes/new", label: "9. Open Dispute", desc: "Report an issue" },
+  ]},
+  { section: "Influencer", items: [
+    { href: "/discover", label: "10. Discover Gigs", desc: "Browse & apply" },
+    { href: "/qr", label: "11. QR Generation", desc: "5-min QR + countdown" },
+    { href: "/submit", label: "12. Post-Visit", desc: "Content or feedback" },
+    { href: "/resubmit", label: "13. Resubmission", desc: "Edit & resubmit" },
+    { href: "/tiers", label: "14. Tier Progress", desc: "Growth roadmap" },
+  ]},
+  { section: "Admin", items: [
+    { href: "/review", label: "15. Review Queue", desc: "Approve/reject submissions" },
+    { href: "/disputes", label: "16. Disputes", desc: "Resolve/dismiss" },
+  ]},
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div style={{ maxWidth: 720, margin: "0 auto", padding: "48px 24px" }}>
+      <div style={{ textAlign: "center", marginBottom: 48 }}>
+        <div style={{ width: 56, height: 56, borderRadius: 16, background: "linear-gradient(135deg, #4338CA, #7C3AED)", display: "inline-flex", alignItems: "center", justifyContent: "center", marginBottom: 16 }}>
+          <span style={{ color: "white", fontSize: 24, fontWeight: 800 }}>A</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <h1 style={{ fontSize: 28, fontWeight: 800, margin: "0 0 8px" }}>Amplii Flows</h1>
+        <p style={{ color: "#64748b", fontSize: 14 }}>16 flows · Next.js · TypeScript · Tailwind · shadcn/ui</p>
+      </div>
+      {flows.map((s) => (
+        <div key={s.section} style={{ marginBottom: 36 }}>
+          <h2 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>{s.section}</h2>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+            {s.items.map((f) => (
+              <Link key={f.href} href={f.href} style={{ display: "block", padding: 16, border: "1px solid #e2e8f0", borderRadius: 12, textDecoration: "none", color: "inherit" }}>
+                <div style={{ fontSize: 14, fontWeight: 700 }}>{f.label}</div>
+                <div style={{ fontSize: 12, color: "#64748b", marginTop: 4 }}>{f.desc}</div>
+                <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 6, fontFamily: "monospace" }}>{f.href}</div>
+              </Link>
+            ))}
+          </div>
         </div>
-      </main>
+      ))}
     </div>
   );
 }
