@@ -20,6 +20,7 @@ import {
   ThumbsUp,
   ThumbsDown,
   Lightbulb,
+  Clock,
 } from "lucide-react";
 
 type SubmitStep = "choose" | "content" | "feedback" | "submitted";
