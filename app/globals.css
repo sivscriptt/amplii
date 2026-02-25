@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    /* Primary Palette */
     --amplii-indigo: 245 58% 51%;
     --amplii-violet: 263 83% 58%;
     --amplii-coral: 4 93% 69%;
@@ -11,6 +12,7 @@
     --amplii-slate: 217 33% 17%;
     --amplii-cloud: 210 40% 98%;
 
+    /* Semantic */
     --success: 160 60% 45%;
     --success-light: 149 80% 90%;
     --warning: 38 93% 50%;
@@ -20,6 +22,7 @@
     --info: 217 91% 60%;
     --info-light: 214 95% 93%;
 
+    /* shadcn/ui overrides */
     --background: 210 40% 98%;
     --foreground: 217 33% 17%;
     --card: 0 0% 100%;

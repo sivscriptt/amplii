@@ -1,64 +1,62 @@
-import { createClient } from "@supabase/supabase-js";
+import { createBrowserClient as createSupaBrowser } from "@supabase/ssr";
+import { createServerClient as createSupaServer } from "@supabase/ssr";
+import type { Database } from "./types";
 
-export type UserRole = "business" | "influencer" | "admin";
+// Re-export common types for convenience
+export type {
+  UserRole,
+  Profile,
+  BusinessProfile,
+  InfluencerProfile,
+  SocialAccount,
+  Gig,
+  Application,
+  Visit,
+  Submission,
+  Payout,
+  WalletRow,
+  TierProgress,
+  Rating,
+  Dispute,
+  Database,
+} from "./types";
 
-export interface Profile {
-  user_id: string;
-  role: UserRole;
-  display_name: string;
-  created_at: string;
-}
+// ─── Browser Client (used in "use client" components) ───
 
-export interface BusinessProfile {
-  user_id: string;
-  business_name: string;
-  location: string | null;
-  latitude: number | null;
-  longitude: number | null;
-}
-
-export interface InfluencerProfile {
-  user_id: string;
-  handle: string;
-  tier: 1 | 2 | 3;
-  follower_count: number;
-  engagement_rate: number | null;
-  primary_platform: string | null;
-  social_accounts: SocialAccount[];
-  reputation_score: number;
-}
-
-export interface SocialAccount {
-  platform: string;
-  handle: string;
-  follower_count: number;
-  linked: boolean;
-}
-
-export interface Rating {
-  id: string;
-  gig_id: string;
-  rater_id: string;
-  ratee_id: string;
-  score: 1 | 2 | 3 | 4 | 5;
-  comment: string | null;
-  tags: string[];
-  created_at: string;
-}
-
-/**
- * Browser-side Supabase client (singleton).
- * Reads NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY from env.
- */
 export function createBrowserClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  return createSupaBrowser<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+}
 
-  if (!url || !key) {
-    throw new Error(
-      "Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY"
-    );
-  }
+// ─── Server Client (used in Server Components, Server Actions, Route Handlers) ───
+// Call this in an async context with access to cookies()
 
-  return createClient(url, key);
+export async function createServerComponentClient() {
+  // Dynamic import to avoid build errors in client bundles
+  const { cookies } = await import("next/headers");
+  const cookieStore = await cookies();
+
+  return createSupaServer<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll();
+        },
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options)
+            );
+          } catch {
+            // setAll can fail in Server Components (read-only).
+            // The middleware handles token refresh.
+          }
+        },
+      },
+    }
+  );
 }
