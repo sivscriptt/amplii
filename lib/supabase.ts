@@ -23,11 +23,11 @@ export type {
 
 // ─── Browser Client (used in "use client" components) ───
 
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "https://placeholder.supabase.co";
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.placeholder";
+
 export function createBrowserClient() {
-  return createSupaBrowser<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  );
+  return createSupaBrowser<Database>(SUPABASE_URL, SUPABASE_ANON_KEY);
 }
 
 // ─── Server Client (used in Server Components, Server Actions, Route Handlers) ───
@@ -39,8 +39,8 @@ export async function createServerComponentClient() {
   const cookieStore = await cookies();
 
   return createSupaServer<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll() {
