@@ -112,7 +112,7 @@ function RateeCard({ perspective }: { perspective: Perspective }) {
           {isBiz ? "Rating Influencer" : "Rating Business"}
         </div>
         <div className="mx-auto mb-5 flex items-center justify-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-amplii-violet to-amplii-coral font-display text-base font-bold text-white shadow-sm">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-amplii-violet to-amplii-coral font-display text-[15px] font-bold text-white shadow-sm">
             {isBiz ? "YA" : "TH"}
           </div>
           <div className="text-left">
@@ -266,7 +266,7 @@ function ConfirmScreen({ perspective, data }: { perspective: Perspective; data: 
       </div>
 
       <Card className="border-slate-100 text-left shadow-sm">
-        <CardContent className="p-5">
+        <CardContent className="p-5 lg:p-6">
           <div className="mb-4 font-display text-[11px] font-bold uppercase tracking-widest text-slate-400">Your Rating</div>
           <div className="flex gap-3">
             <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amplii-indigo to-amplii-violet font-display text-sm font-bold text-white">
@@ -285,7 +285,7 @@ function ConfirmScreen({ perspective, data }: { perspective: Perspective; data: 
               {data.tags.length > 0 && (
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {data.tags.map((t) => (
-                    <Badge key={t} className="rounded-full bg-amplii-indigo/[.06] font-display text-[10px] text-amplii-indigo shadow-none">{t}</Badge>
+                    <Badge key={t} className="rounded-full bg-amplii-indigo/[.06] font-display text-[11px] text-amplii-indigo shadow-none">{t}</Badge>
                   ))}
                 </div>
               )}
@@ -296,7 +296,7 @@ function ConfirmScreen({ perspective, data }: { perspective: Perspective; data: 
       </Card>
 
       <Card className="border-slate-100 bg-slate-50/50 text-left shadow-sm">
-        <CardContent className="p-5">
+        <CardContent className="p-5 lg:p-6">
           <div className="mb-3 font-display text-[11px] font-bold uppercase tracking-widest text-slate-400">
             {isBiz ? "Influencer's Updated Score" : "Business's Updated Score"}
           </div>

@@ -94,7 +94,7 @@ export default function AdminDisputesPage() {
             <AlertTriangle className="h-5 w-5 text-amber-600" />
           </div>
           <div>
-            <h1 className="font-display text-2xl font-extrabold tracking-tight">
+            <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
               Disputes
             </h1>
             <p className="text-sm text-slate-500">
@@ -131,9 +131,9 @@ export default function AdminDisputesPage() {
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
                         <span className="truncate font-display text-sm font-bold">{d.reason}</span>
-                        <Badge className={`${st.bg} ${st.text} text-[10px]`}>{st.label}</Badge>
+                        <Badge className={`${st.bg} ${st.text} text-[11px]`}>{st.label}</Badge>
                       </div>
-                      <div className="mt-0.5 text-xs text-slate-500">
+                      <div className="mt-0.5 text-[13px] text-slate-500 lg:text-xs">
                         {d.gig} · {d.opened_by} vs {d.against} · {d.opened_at}
                       </div>
                     </div>
@@ -174,7 +174,7 @@ export default function AdminDisputesPage() {
 
                       {/* Assigned admin */}
                       {d.assigned_admin && (
-                        <div className="flex items-center gap-2 text-xs text-slate-500">
+                        <div className="flex items-center gap-2 text-[13px] text-slate-500 lg:text-xs">
                           <Shield className="h-3.5 w-3.5" />
                           Assigned to: <strong className="text-foreground">{d.assigned_admin}</strong>
                         </div>
@@ -217,7 +217,7 @@ export default function AdminDisputesPage() {
               <div className="space-y-4">
                 <div className="text-sm">
                   <span className="font-display font-semibold">{resolveDialog.dispute.reason}</span>
-                  <div className="mt-1 text-xs text-slate-500">
+                  <div className="mt-1 text-[13px] text-slate-500 lg:text-xs">
                     {resolveDialog.dispute.opened_by} vs {resolveDialog.dispute.against}
                   </div>
                 </div>

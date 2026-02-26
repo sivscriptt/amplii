@@ -120,7 +120,7 @@ function BasicsStep({
   return (
     <div className="space-y-5">
       <div>
-        <h2 className="font-display text-2xl font-extrabold tracking-tight">
+        <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Campaign basics
         </h2>
         <p className="mt-1 text-sm text-slate-500">
@@ -162,7 +162,7 @@ function BasicsStep({
           onChange={(e) => onChange({ audience_offer: e.target.value })}
           className="h-11 text-base lg:h-10 lg:text-sm"
         />
-        <p className="text-xs text-slate-500">
+        <p className="text-[13px] text-slate-500 lg:text-xs">
           Every campaign must include an offer for the influencer's audience.
         </p>
       </div>
@@ -234,7 +234,7 @@ function RewardStep({
       </button>
 
       <div>
-        <h2 className="font-display text-2xl font-extrabold tracking-tight">
+        <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Reward configuration
         </h2>
         <p className="mt-1 text-sm text-slate-500">
@@ -256,7 +256,7 @@ function RewardStep({
           >
             {r.icon}
             <span className="font-display text-[13px] font-bold">{r.label}</span>
-            <span className="text-[10px] leading-tight">{r.desc}</span>
+            <span className="text-[11px] leading-tight">{r.desc}</span>
           </button>
         ))}
       </div>
@@ -303,7 +303,7 @@ function RewardStep({
               <Label className="font-display text-[13px]">
                 Base / Completion Split
               </Label>
-              <span className="font-mono text-xs text-slate-500">
+              <span className="font-mono text-[13px] text-slate-500 lg:text-xs">
                 {data.base_percent}% / {100 - data.base_percent}%
               </span>
             </div>
@@ -324,7 +324,7 @@ function RewardStep({
                   <div className="mt-1 font-mono text-lg font-bold text-emerald-800">
                     MVR {baseAmount}
                   </div>
-                  <div className="mt-0.5 text-[10px] text-emerald-600">
+                  <div className="mt-0.5 text-[11px] text-emerald-600">
                     For visit + feedback
                   </div>
                 </CardContent>
@@ -337,7 +337,7 @@ function RewardStep({
                   <div className="mt-1 font-mono text-lg font-bold text-primary">
                     MVR {completionAmount}
                   </div>
-                  <div className="mt-0.5 text-[10px] text-slate-500">
+                  <div className="mt-0.5 text-[11px] text-slate-500">
                     For approved content
                   </div>
                 </CardContent>
@@ -415,7 +415,7 @@ function SettingsStep({
       </button>
 
       <div>
-        <h2 className="font-display text-2xl font-extrabold tracking-tight">
+        <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Gig settings
         </h2>
         <p className="mt-1 text-sm text-slate-500">
@@ -589,7 +589,7 @@ function ReviewStep({
       </button>
 
       <div>
-        <h2 className="font-display text-2xl font-extrabold tracking-tight">
+        <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Review your gig
         </h2>
         <p className="mt-1 text-sm text-slate-500">
@@ -686,7 +686,7 @@ function PublishSuccess() {
       <div className="flex h-20 w-20 animate-pop-in items-center justify-center rounded-full bg-gradient-to-br from-amplii-indigo to-amplii-violet shadow-lg shadow-amplii-indigo/25">
         <CheckCircle2 className="h-9 w-9 text-white" />
       </div>
-      <h1 className="mt-6 font-display text-2xl font-extrabold tracking-tight">
+      <h1 className="mt-6 font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
         Gig Published!
       </h1>
       <p className="mt-2 max-w-[280px] text-sm text-slate-500">

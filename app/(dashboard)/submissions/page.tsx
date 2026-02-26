@@ -75,7 +75,7 @@ export default function SubmissionsPage() {
           Dashboard
         </button>
 
-        <h1 className="font-display text-2xl font-extrabold tracking-tight">
+        <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Submissions
         </h1>
         <p className="mt-1 text-sm text-slate-500">
@@ -108,7 +108,7 @@ export default function SubmissionsPage() {
                 onClick={() => setSelected(s)}
                 className="cursor-pointer border-slate-100 shadow-sm transition-all duration-200 hover:shadow-md"
               >
-                <CardContent className="p-4">
+                <CardContent className="px-4 py-4 lg:px-5">
                   <div className="flex items-start gap-3">
                     <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent font-display text-sm font-bold text-white">
                       {s.avatar}
@@ -118,17 +118,17 @@ export default function SubmissionsPage() {
                         <span className="font-display text-sm font-bold">
                           {s.influencer}
                         </span>
-                        <Badge className={`${st.bg} ${st.text} text-[10px]`}>
+                        <Badge className={`${st.bg} ${st.text} text-[11px]`}>
                           {st.label}
                         </Badge>
                       </div>
-                      <div className="mt-0.5 text-xs text-slate-500">
+                      <div className="mt-0.5 text-[13px] text-slate-500 lg:text-xs">
                         {s.handle} · {s.gig} · {s.submitted_at}
                       </div>
                       <div className="mt-2 flex items-center gap-2">
                         <Badge
                           variant="secondary"
-                          className="gap-1 text-[10px]"
+                          className="gap-1 text-[11px]"
                         >
                           {s.path_type === "content" ? (
                             <Image className="h-3 w-3" />
@@ -138,7 +138,7 @@ export default function SubmissionsPage() {
                           {s.path_type === "content" ? "Content" : "Feedback"}
                         </Badge>
                         {s.resubmission_count > 0 && (
-                          <Badge variant="secondary" className="text-[10px]">
+                          <Badge variant="secondary" className="text-[11px]">
                             Resubmission #{s.resubmission_count}
                           </Badge>
                         )}
@@ -172,7 +172,7 @@ export default function SubmissionsPage() {
                     <div className="font-display text-sm font-bold">
                       {selected.influencer}
                     </div>
-                    <div className="text-xs text-slate-500">
+                    <div className="text-[13px] text-slate-500 lg:text-xs">
                       {selected.handle} · {selected.submitted_at}
                     </div>
                   </div>
@@ -195,7 +195,7 @@ export default function SubmissionsPage() {
                       </a>
                       <div className="flex h-40 items-center justify-center rounded-lg bg-muted">
                         <Image className="h-8 w-8 text-slate-500/40" />
-                        <span className="ml-2 text-xs text-slate-500">
+                        <span className="ml-2 text-[13px] text-slate-500 lg:text-xs">
                           Screenshot proof
                         </span>
                       </div>
@@ -216,7 +216,7 @@ export default function SubmissionsPage() {
                   </Card>
                 )}
 
-                <div className="flex items-center gap-2 rounded-lg bg-muted p-3 text-xs text-slate-500">
+                <div className="flex items-center gap-2 rounded-lg bg-muted p-3 text-[13px] text-slate-500 lg:text-xs">
                   <Flag className="h-3.5 w-3.5" />
                   Admin reviews and approves all payouts. You can escalate
                   concerns below.

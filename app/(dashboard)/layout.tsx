@@ -24,7 +24,7 @@ export default function DashboardLayout({
     <div className="flex min-h-screen bg-slate-50/50">
       <DashboardSidebar />
       <main className="min-h-screen flex-1 overflow-y-auto">
-        <div className="mx-auto max-w-5xl px-8 pb-16 pt-20 lg:px-10 lg:pt-10">
+        <div className="mx-auto max-w-5xl px-5 pb-16 pt-16 lg:px-10 lg:pt-10">
           {loading ? <DashboardSkeleton /> : children}
         </div>
       </main>

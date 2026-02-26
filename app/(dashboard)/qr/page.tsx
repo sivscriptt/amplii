@@ -51,7 +51,7 @@ export default function QRPage() {
               <QrCode className="h-10 w-10 text-primary" />
             </div>
             <div>
-              <h1 className="font-display text-2xl font-extrabold tracking-tight">Generate Visit QR</h1>
+              <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">Generate Visit QR</h1>
               <p className="mt-2 text-sm text-slate-500">Show this QR code to the business staff to verify your visit.</p>
             </div>
             <Card className="bg-muted/50 text-left">
@@ -59,7 +59,7 @@ export default function QRPage() {
                 <span className="text-xl">☕</span>
                 <div>
                   <div className="font-display text-sm font-bold">Weekend Brunch Feature</div>
-                  <div className="text-xs text-slate-500">Treehouse · Main St</div>
+                  <div className="text-[13px] text-slate-500 lg:text-xs">Treehouse · Main St</div>
                 </div>
               </CardContent>
             </Card>
@@ -106,7 +106,7 @@ export default function QRPage() {
               <p className="text-xs text-red-500">QR expiring soon — ask staff to scan quickly.</p>
             )}
 
-            <button onClick={simulateScan} className="text-xs text-slate-500 underline underline-offset-2">
+            <button onClick={simulateScan} className="text-[13px] text-slate-500 lg:text-xs underline underline-offset-2">
               Demo: simulate scan
             </button>
           </div>
@@ -119,7 +119,7 @@ export default function QRPage() {
               <AlertTriangle className="h-8 w-8 text-red-500" />
             </div>
             <div>
-              <h2 className="font-display text-2xl font-extrabold tracking-tight text-red-800">QR Expired</h2>
+              <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl text-red-800">QR Expired</h2>
               <p className="mt-2 text-sm text-slate-500">Your QR code expired after 5 minutes. Generate a new one.</p>
             </div>
             <Button onClick={generate} className="h-12 w-full gap-2 rounded-xl font-display font-semibold transition-all duration-200">
@@ -135,7 +135,7 @@ export default function QRPage() {
               <CheckCircle2 className="h-10 w-10 text-emerald-600" />
             </div>
             <div>
-              <h1 className="font-display text-2xl font-extrabold tracking-tight text-emerald-800">Visit Verified!</h1>
+              <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl text-emerald-800">Visit Verified!</h1>
               <p className="mt-2 text-sm text-slate-500">The business has confirmed your visit. You can now submit content or feedback.</p>
             </div>
             <div className="flex gap-3">

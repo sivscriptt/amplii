@@ -60,37 +60,37 @@ export default function WalletPage() {
           Dashboard
         </button>
 
-        <h1 className="font-display text-2xl font-extrabold tracking-tight">
+        <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Wallet
         </h1>
 
         {/* Balance card */}
-        <div className="relative mt-5 overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-700 p-6 text-white">
+        <div className="relative mt-6 overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 to-slate-700 p-5 text-white lg:p-6">
           <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/[.04]" />
           <div className="flex items-start justify-between">
             <div>
-              <div className="font-display text-xs font-semibold uppercase tracking-widest text-slate-400">
+              <div className="font-display text-[11px] font-semibold uppercase tracking-widest text-slate-400">
                 Available Balance
               </div>
-              <div className="mt-1 font-display text-4xl font-extrabold tracking-tight">
+              <div className="mt-1.5 font-display text-[32px] font-extrabold tracking-tight lg:text-4xl">
                 MVR {balance.toLocaleString()}
               </div>
             </div>
             <Wallet className="h-6 w-6 text-white/30" />
           </div>
-          <div className="mt-4 flex gap-3">
-            <div className="rounded-lg bg-white/10 px-3 py-2">
+          <div className="mt-5 flex gap-3">
+            <div className="rounded-xl bg-white/10 px-3.5 py-2.5">
               <div className="flex items-center gap-1 text-[11px] text-white/60">
                 <Lock className="h-3 w-3" />
                 In Escrow
               </div>
-              <div className="mt-0.5 font-mono text-sm font-bold">
+              <div className="mt-1 font-mono text-[15px] font-bold">
                 MVR {escrow.toLocaleString()}
               </div>
             </div>
-            <div className="rounded-lg bg-white/10 px-3 py-2">
+            <div className="rounded-xl bg-white/10 px-3.5 py-2.5">
               <div className="text-[11px] text-white/60">Total</div>
-              <div className="mt-0.5 font-mono text-sm font-bold">
+              <div className="mt-1 font-mono text-[15px] font-bold">
                 MVR {(balance + escrow).toLocaleString()}
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function WalletPage() {
 
         <Button
           onClick={() => setShowFund(true)}
-          className="mt-4 h-11 w-full gap-2 font-display font-semibold"
+          className="mt-4 h-12 w-full gap-2 rounded-xl font-display text-[15px] font-semibold transition-all duration-200"
         >
           <Plus className="h-4 w-4" />
           Fund Wallet
@@ -107,34 +107,34 @@ export default function WalletPage() {
 
         {/* Transactions */}
         <div className="mt-8">
-          <h2 className="font-display text-base font-bold">
+          <h2 className="font-display text-[15px] font-bold">
             Transaction History
           </h2>
           <div className="mt-3 space-y-2">
             {mockTx.map((tx) => {
               const style = TX_STYLES[tx.type];
               return (
-                <Card key={tx.id}>
-                  <CardContent className="flex items-center gap-3 p-3.5">
+                <Card key={tx.id} className="border-slate-100 shadow-sm">
+                  <CardContent className="flex items-center gap-3 px-4 py-3.5">
                     <div
-                      className={`flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg ${style.color}`}
+                      className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl ${style.color}`}
                     >
                       {style.icon}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <div className="truncate text-sm font-medium">
+                      <div className="truncate text-[13px] font-medium">
                         {tx.description}
                       </div>
-                      <div className="text-xs text-slate-500">
+                      <div className="mt-0.5 text-[12px] text-slate-400">
                         {tx.timestamp}
                       </div>
                     </div>
                     <span
-                      className={`flex-shrink-0 font-mono text-sm font-bold ${
-                        tx.amount >= 0 ? "text-emerald-600" : "text-foreground"
+                      className={`flex-shrink-0 font-mono text-[14px] font-bold ${
+                        tx.amount >= 0 ? "text-emerald-600" : "text-slate-900"
                       }`}
                     >
-                      {tx.amount >= 0 ? "+" : ""}MVR {Math.abs(tx.amount).toLocaleString()}
+                      {tx.amount >= 0 ? "+" : "−"}MVR {Math.abs(tx.amount).toLocaleString()}
                     </span>
                   </CardContent>
                 </Card>
@@ -143,7 +143,7 @@ export default function WalletPage() {
           </div>
         </div>
 
-        <p className="mt-6 text-center text-xs text-slate-500">
+        <p className="mt-6 text-center text-[13px] text-slate-500 lg:text-xs">
           Payouts to bank accounts are handled manually by Amplii operations.
         </p>
 

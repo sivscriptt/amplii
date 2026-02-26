@@ -83,7 +83,7 @@ export default function ScannerPage() {
               <QrCode className="h-10 w-10 text-primary" />
             </div>
             <div>
-              <h1 className="font-display text-2xl font-extrabold tracking-tight">
+              <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
                 Scan Influencer QR
               </h1>
               <p className="mt-2 text-sm text-slate-500">
@@ -92,7 +92,7 @@ export default function ScannerPage() {
               </p>
             </div>
 
-            <div className="flex gap-2 rounded-lg bg-muted p-3 text-left text-xs text-slate-500">
+            <div className="flex gap-2 rounded-lg bg-muted p-3 text-left text-[13px] text-slate-500 lg:text-xs">
               <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-slate-500" />
               <span>
                 GPS will auto-match to your nearest outlet:{" "}
@@ -111,13 +111,13 @@ export default function ScannerPage() {
             <div className="flex items-center justify-center gap-4">
               <button
                 onClick={simulateExpired}
-                className="text-xs text-slate-500 underline underline-offset-2"
+                className="text-[13px] text-slate-500 lg:text-xs underline underline-offset-2"
               >
                 Demo: expired QR
               </button>
               <button
                 onClick={() => setShowManualDialog(true)}
-                className="flex items-center gap-1 text-xs text-slate-500 underline underline-offset-2"
+                className="flex items-center gap-1 text-[13px] text-slate-500 lg:text-xs underline underline-offset-2"
               >
                 <Hand className="h-3 w-3" />
                 Manual confirm
@@ -136,7 +136,7 @@ export default function ScannerPage() {
             </div>
             <div>
               <p className="font-display text-sm font-semibold">Scanning...</p>
-              <p className="mt-1 text-xs text-slate-500">
+              <p className="mt-1 text-[13px] text-slate-500 lg:text-xs">
                 Hold steady. Looking for a valid QR code.
               </p>
             </div>
@@ -151,7 +151,7 @@ export default function ScannerPage() {
                 <CheckCircle2 className="h-3 w-3 text-emerald-500" />
                 QR Valid
               </Badge>
-              <h2 className="font-display text-2xl font-extrabold tracking-tight">
+              <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
                 Which gig is this visit for?
               </h2>
               <p className="mt-1 text-sm text-slate-500">
@@ -171,7 +171,7 @@ export default function ScannerPage() {
                       <div className="font-display text-sm font-bold">
                         {g.title}
                       </div>
-                      <div className="mt-0.5 text-xs text-slate-500">
+                      <div className="mt-0.5 text-[13px] text-slate-500 lg:text-xs">
                         {g.influencer} · {g.handle}
                       </div>
                     </div>
@@ -192,7 +192,7 @@ export default function ScannerPage() {
               <CheckCircle2 className="h-10 w-10 text-emerald-600" strokeWidth={2} />
             </div>
             <div>
-              <h1 className="font-display text-2xl font-extrabold tracking-tight text-emerald-800">
+              <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl text-emerald-800">
                 Visit Verified!
               </h1>
               <p className="mt-2 text-sm text-slate-500">
@@ -248,7 +248,7 @@ export default function ScannerPage() {
               <XCircle className="h-10 w-10 text-red-500" />
             </div>
             <div>
-              <h1 className="font-display text-2xl font-extrabold tracking-tight text-red-800">
+              <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl text-red-800">
                 QR Expired
               </h1>
               <p className="mt-2 text-sm text-slate-500">

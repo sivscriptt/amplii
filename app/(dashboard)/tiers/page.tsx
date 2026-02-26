@@ -86,7 +86,7 @@ export default function TiersPage() {
             <Trophy className="h-6 w-6 text-white" />
           </div>
           <div>
-            <h1 className="font-display text-2xl font-extrabold tracking-tight">
+            <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
               Your Growth Path
             </h1>
             <p className="text-sm text-slate-500">
@@ -164,23 +164,23 @@ export default function TiersPage() {
                 {/* Content */}
                 <div className={`flex-1 ${i < tiers.length - 1 ? "pb-5" : ""}`}>
                   <div className="flex items-center gap-2">
-                    <span className="font-display text-base font-bold">
+                    <span className="font-display text-[15px] font-bold">
                       Tier {t.tier}: {t.name}
                     </span>
                     {t.current && (
-                      <Badge className="font-display text-[10px]">
+                      <Badge className="font-display text-[11px]">
                         CURRENT
                       </Badge>
                     )}
                     {t.unlocked && !t.current && (
-                      <Badge className="bg-emerald-50 font-display text-[10px] text-emerald-700">
+                      <Badge className="bg-emerald-50 font-display text-[11px] text-emerald-700">
                         ✓ Complete
                       </Badge>
                     )}
                     {!t.unlocked && (
                       <Badge
                         variant="secondary"
-                        className="font-display text-[10px]"
+                        className="font-display text-[11px]"
                       >
                         Locked
                       </Badge>
@@ -221,7 +221,7 @@ export default function TiersPage() {
 
         {/* Completed gigs history */}
         <div className="mt-8">
-          <h2 className="font-display text-base font-bold">
+          <h2 className="font-display text-[15px] font-bold">
             Completion History
           </h2>
           <div className="mt-3 space-y-2">
@@ -247,7 +247,7 @@ export default function TiersPage() {
                   </div>
                   <div className="flex-1">
                     <div className="text-sm font-medium">{g.title}</div>
-                    <div className="text-xs text-slate-500">
+                    <div className="text-[13px] text-slate-500 lg:text-xs">
                       {g.date} · {g.status === "content" ? "Content" : "Feedback"}
                     </div>
                   </div>
@@ -258,7 +258,7 @@ export default function TiersPage() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-lg bg-muted p-3 text-center text-xs text-slate-500">
+        <div className="mt-6 rounded-lg bg-muted p-3 text-center text-[13px] text-slate-500 lg:text-xs">
           Both content and feedback submissions count toward tier progression.
         </div>
       </div>

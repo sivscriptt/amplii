@@ -94,7 +94,7 @@ export default function AdminReviewPage() {
             <Shield className="h-5 w-5 text-primary" />
           </div>
           <div>
-            <h1 className="font-display text-2xl font-extrabold tracking-tight">Review Queue</h1>
+            <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">Review Queue</h1>
             <p className="text-sm text-slate-500">
               {queue.filter((q) => q.review_status === "submitted").length} pending review
             </p>
@@ -130,12 +130,12 @@ export default function AdminReviewPage() {
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
                         <span className="font-display text-sm font-bold">{item.influencer}</span>
-                        <Badge className={`text-[10px] ${item.path_type === "content" ? "bg-blue-50 text-blue-700" : "bg-amber-50 text-amber-700"}`}>
+                        <Badge className={`text-[11px] ${item.path_type === "content" ? "bg-blue-50 text-blue-700" : "bg-amber-50 text-amber-700"}`}>
                           {item.path_type === "content" ? <><Image className="mr-1 h-3 w-3" />Content</> : <><MessageSquare className="mr-1 h-3 w-3" />Feedback</>}
                         </Badge>
-                        {item.resubmission_count > 0 && <Badge variant="secondary" className="text-[10px]">Resub #{item.resubmission_count}</Badge>}
+                        {item.resubmission_count > 0 && <Badge variant="secondary" className="text-[11px]">Resub #{item.resubmission_count}</Badge>}
                       </div>
-                      <div className="text-xs text-slate-500">{item.business} · {item.gig} · {item.submitted_at}</div>
+                      <div className="text-[13px] text-slate-500 lg:text-xs">{item.business} · {item.gig} · {item.submitted_at}</div>
                     </div>
                     {isExpanded ? <ChevronUp className="h-4 w-4 text-slate-500" /> : <ChevronDown className="h-4 w-4 text-slate-500" />}
                   </button>
@@ -155,7 +155,7 @@ export default function AdminReviewPage() {
                           {item.screenshot && (
                             <div className="flex h-32 items-center justify-center rounded-lg bg-muted">
                               <Image className="h-6 w-6 text-slate-500/40" />
-                              <span className="ml-2 text-xs text-slate-500">Screenshot attached</span>
+                              <span className="ml-2 text-[13px] text-slate-500 lg:text-xs">Screenshot attached</span>
                             </div>
                           )}
                         </div>

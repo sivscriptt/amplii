@@ -92,7 +92,7 @@ function RoleStep({ onSelect }: { onSelect: (role: UserRole) => void }) {
 
   return (
     <div className="px-6 lg:px-0">
-      <h1 className="font-display text-2xl font-extrabold tracking-tight">
+      <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
         How will you use Amplii?
       </h1>
       <p className="mt-2 text-sm leading-relaxed text-slate-500">
@@ -111,7 +111,7 @@ function RoleStep({ onSelect }: { onSelect: (role: UserRole) => void }) {
                 {r.icon}
               </div>
               <div className="flex-1">
-                <div className="font-display text-base font-bold">{r.title}</div>
+                <div className="font-display text-[15px] font-bold">{r.title}</div>
                 <div className="mt-1 text-[13px] leading-relaxed text-slate-500">
                   {r.desc}
                 </div>
@@ -150,7 +150,7 @@ function BusinessProfileStep({
 
   return (
     <div className="px-6 lg:px-0">
-      <h1 className="font-display text-2xl font-extrabold tracking-tight">
+      <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
         Set up your business
       </h1>
       <p className="mt-2 text-sm leading-relaxed text-slate-500">
@@ -198,7 +198,7 @@ function BusinessProfileStep({
               className="h-11 pl-10 text-base lg:h-10 lg:text-sm"
             />
           </div>
-          <p className="text-xs text-slate-500">
+          <p className="text-[13px] text-slate-500 lg:text-xs">
             GPS coordinates auto-detected for visit verification.
           </p>
         </div>
@@ -206,7 +206,7 @@ function BusinessProfileStep({
         <Button
           onClick={onNext}
           disabled={!isValid}
-          className="h-11 w-full font-display text-[15px] font-semibold lg:h-10 lg:text-sm"
+          className="h-12 w-full font-display text-[15px] font-semibold lg:h-10 lg:text-sm"
         >
           Continue
         </Button>
@@ -229,7 +229,7 @@ function InfluencerProfileStep({
 
   return (
     <div className="px-6 lg:px-0">
-      <h1 className="font-display text-2xl font-extrabold tracking-tight">
+      <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
         Set up your profile
       </h1>
       <p className="mt-2 text-sm leading-relaxed text-slate-500">
@@ -264,7 +264,7 @@ function InfluencerProfileStep({
 
         <div className="space-y-1.5">
           <Label className="font-display text-[13px]">Link Social Account *</Label>
-          <p className="text-xs text-slate-500">
+          <p className="text-[13px] text-slate-500 lg:text-xs">
             Required for identity and follower count verification.
           </p>
           <div className="mt-2 flex flex-col gap-2">
@@ -314,7 +314,7 @@ function InfluencerProfileStep({
         <Button
           onClick={onNext}
           disabled={!isValid}
-          className="h-11 w-full font-display text-[15px] font-semibold lg:h-10 lg:text-sm"
+          className="h-12 w-full font-display text-[15px] font-semibold lg:h-10 lg:text-sm"
         >
           Continue
         </Button>
@@ -327,7 +327,7 @@ function InfluencerProfileStep({
 function BusinessWalletStep({ onNext }: { onNext: () => void }) {
   return (
     <div className="px-6 lg:px-0">
-      <h1 className="font-display text-2xl font-extrabold tracking-tight">
+      <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
         Fund your wallet
       </h1>
       <p className="mt-2 text-sm leading-relaxed text-slate-500">
@@ -404,7 +404,7 @@ function InfluencerTierStep({ onNext }: { onNext: () => void }) {
 
   return (
     <div className="px-6 lg:px-0">
-      <h1 className="font-display text-2xl font-extrabold tracking-tight">
+      <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
         Your growth path
       </h1>
       <p className="mt-2 text-sm leading-relaxed text-slate-500">
@@ -432,7 +432,7 @@ function InfluencerTierStep({ onNext }: { onNext: () => void }) {
                   {t.name}
                 </span>
                 {t.active && (
-                  <Badge className="font-display text-[10px]">CURRENT</Badge>
+                  <Badge className="font-display text-[11px]">CURRENT</Badge>
                 )}
               </div>
               <div className="mt-0.5 text-[13px] text-slate-500">
@@ -451,7 +451,7 @@ function InfluencerTierStep({ onNext }: { onNext: () => void }) {
 
       {/* Progress */}
       <Card className="mt-6 bg-muted/50">
-        <CardContent className="p-4">
+        <CardContent className="px-4 py-4 lg:px-5">
           <div className="mb-2 flex items-center justify-between">
             <span className="font-display text-[13px] font-semibold">
               Tier 1 Progress

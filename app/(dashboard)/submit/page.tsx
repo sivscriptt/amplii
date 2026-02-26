@@ -47,7 +47,7 @@ export default function SubmitPage() {
               <Badge className="mb-3 gap-1 bg-emerald-50 font-display text-emerald-700">
                 <CheckCircle2 className="h-3 w-3" />Visit Verified
               </Badge>
-              <h1 className="font-display text-2xl font-extrabold tracking-tight">What would you like to do?</h1>
+              <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">What would you like to do?</h1>
               <p className="mt-1 text-sm text-slate-500">Choose based on your experience at the venue.</p>
             </div>
 
@@ -56,7 +56,7 @@ export default function SubmitPage() {
                 <span className="text-xl">☕</span>
                 <div className="flex-1">
                   <div className="font-display text-sm font-bold">Weekend Brunch Feature</div>
-                  <div className="text-xs text-slate-500">Treehouse · MVR 1,500 (30/70 split)</div>
+                  <div className="text-[13px] text-slate-500 lg:text-xs">Treehouse · MVR 1,500 (30/70 split)</div>
                 </div>
               </CardContent>
             </Card>
@@ -68,7 +68,7 @@ export default function SubmitPage() {
                     <Image className="h-6 w-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-display text-base font-bold">Submit Content</div>
+                    <div className="font-display text-[15px] font-bold">Submit Content</div>
                     <p className="mt-1 text-[13px] leading-relaxed text-slate-500">Post your content, then share the link + screenshot proof.</p>
                     <Badge className="mt-2 bg-emerald-50 font-display text-[11px] text-emerald-700">
                       Full reward: MVR 1,500
@@ -83,7 +83,7 @@ export default function SubmitPage() {
                     <MessageSquare className="h-6 w-6 text-amber-600" />
                   </div>
                   <div className="flex-1">
-                    <div className="font-display text-base font-bold">Provide Feedback</div>
+                    <div className="font-display text-[15px] font-bold">Provide Feedback</div>
                     <p className="mt-1 text-[13px] leading-relaxed text-slate-500">If you prefer not to promote, submit a constructive feedback report instead.</p>
                     <Badge className="mt-2 bg-amber-50 font-display text-[11px] text-amber-700">
                       Base rate only: MVR 450
@@ -102,7 +102,7 @@ export default function SubmitPage() {
               <ChevronLeft className="h-4 w-4" />Back
             </button>
             <div>
-              <h2 className="font-display text-2xl font-extrabold tracking-tight">Submit Content</h2>
+              <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">Submit Content</h2>
               <p className="mt-1 text-sm text-slate-500">Post your content on the required platform(s), then share proof below.</p>
             </div>
 
@@ -121,7 +121,7 @@ export default function SubmitPage() {
               <div className="flex h-32 cursor-pointer items-center justify-center rounded-xl border-2 border-dashed border-border bg-muted/50 transition-colors hover:border-primary/30">
                 <div className="text-center">
                   <Upload className="mx-auto h-6 w-6 text-slate-500" />
-                  <p className="mt-2 text-xs text-slate-500">Click or drag to upload</p>
+                  <p className="mt-2 text-[13px] text-slate-500 lg:text-xs">Click or drag to upload</p>
                 </div>
               </div>
             </div>
@@ -139,7 +139,7 @@ export default function SubmitPage() {
               <ChevronLeft className="h-4 w-4" />Back
             </button>
             <div>
-              <h2 className="font-display text-2xl font-extrabold tracking-tight">Provide Feedback</h2>
+              <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">Provide Feedback</h2>
               <p className="mt-1 text-sm text-slate-500">Help the business improve. Your report is private between you, the admin, and the business.</p>
             </div>
 
@@ -181,7 +181,7 @@ export default function SubmitPage() {
             <div className="flex h-16 w-16 animate-pop-in items-center justify-center rounded-full bg-emerald-50">
               <CheckCircle2 className="h-8 w-8 text-emerald-500" />
             </div>
-            <h1 className="mt-5 font-display text-2xl font-extrabold tracking-tight">Submitted!</h1>
+            <h1 className="mt-5 font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">Submitted!</h1>
             <p className="mt-2 max-w-[280px] text-sm text-slate-500">Your submission is pending admin review. You'll be notified once a decision is made.</p>
             <Badge variant="secondary" className="mt-4 gap-1 font-display"><Clock className="h-3 w-3" />Pending Review</Badge>
             <Button onClick={() => router.push("/dashboard")} className="mt-6 font-display font-semibold">Back to Dashboard</Button>

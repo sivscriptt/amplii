@@ -47,7 +47,7 @@ export default function NewDisputePage() {
               <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50">
                 <AlertTriangle className="h-6 w-6 text-amber-600" />
               </div>
-              <h1 className="font-display text-2xl font-extrabold tracking-tight">
+              <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
                 Open a Dispute
               </h1>
               <p className="mt-1 text-sm text-slate-500">
@@ -64,7 +64,7 @@ export default function NewDisputePage() {
                   <div className="font-display text-sm font-bold">
                     Weekend Brunch Feature
                   </div>
-                  <div className="text-xs text-slate-500">
+                  <div className="text-[13px] text-slate-500 lg:text-xs">
                     with @yaania
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function NewDisputePage() {
               Back
             </button>
             <div>
-              <h2 className="font-display text-2xl font-extrabold tracking-tight">
+              <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
                 Describe the issue
               </h2>
               <p className="mt-1 text-sm text-slate-500">
@@ -154,7 +154,7 @@ export default function NewDisputePage() {
               </div>
             </div>
 
-            <div className="flex items-center gap-2 rounded-lg bg-muted p-3 text-xs text-slate-500">
+            <div className="flex items-center gap-2 rounded-lg bg-muted p-3 text-[13px] text-slate-500 lg:text-xs">
               <AlertTriangle className="h-3.5 w-3.5 flex-shrink-0" />
               Disputes may trigger payout holds, gig closures, or account
               actions depending on resolution.
@@ -175,7 +175,7 @@ export default function NewDisputePage() {
             <div className="flex h-16 w-16 animate-pop-in items-center justify-center rounded-full bg-emerald-50">
               <CheckCircle2 className="h-8 w-8 text-emerald-500" />
             </div>
-            <h1 className="mt-5 font-display text-2xl font-extrabold tracking-tight">
+            <h1 className="mt-5 font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
               Dispute Submitted
             </h1>
             <p className="mt-2 max-w-[280px] text-sm text-slate-500">

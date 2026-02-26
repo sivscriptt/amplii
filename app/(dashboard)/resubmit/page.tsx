@@ -46,7 +46,7 @@ export default function ResubmitPage() {
             </div>
 
             <div>
-              <h1 className="font-display text-2xl font-extrabold tracking-tight">
+              <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
                 Submission Rejected
               </h1>
               <p className="mt-1 text-sm text-slate-500">
@@ -56,7 +56,7 @@ export default function ResubmitPage() {
             </div>
 
             <Card className="border-red-200 bg-red-50/50">
-              <CardContent className="p-4">
+              <CardContent className="px-4 py-4 lg:px-5">
                 <div className="font-display text-xs font-semibold uppercase text-red-700">
                   Rejection Reason
                 </div>
@@ -75,7 +75,7 @@ export default function ResubmitPage() {
                   <div className="font-display text-sm font-bold">
                     Weekend Brunch Feature
                   </div>
-                  <div className="text-xs text-slate-500">
+                  <div className="text-[13px] text-slate-500 lg:text-xs">
                     Treehouse
                   </div>
                 </div>
@@ -122,12 +122,12 @@ export default function ResubmitPage() {
 
             <div>
               <div className="mb-2 flex items-center gap-2">
-                <h2 className="font-display text-2xl font-extrabold tracking-tight">
+                <h2 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
                   Resubmit Content
                 </h2>
                 <Badge
                   variant="secondary"
-                  className="font-display text-[10px]"
+                  className="font-display text-[11px]"
                 >
                   Attempt 1/1
                 </Badge>
@@ -160,7 +160,7 @@ export default function ResubmitPage() {
                 onChange={(e) => setContentUrl(e.target.value)}
                 className="h-11 text-base lg:h-10 lg:text-sm"
               />
-              <p className="text-xs text-slate-500">
+              <p className="text-[13px] text-slate-500 lg:text-xs">
                 Original link shown — update with the corrected URL.
               </p>
             </div>
@@ -173,7 +173,7 @@ export default function ResubmitPage() {
               <div className="flex h-28 cursor-pointer items-center justify-center rounded-xl border-2 border-dashed border-border bg-muted/50 transition-colors hover:border-primary/30">
                 <div className="text-center">
                   <Upload className="mx-auto h-5 w-5 text-slate-500" />
-                  <p className="mt-1 text-xs text-slate-500">
+                  <p className="mt-1 text-[13px] text-slate-500 lg:text-xs">
                     Replace screenshot
                   </p>
                 </div>
@@ -202,7 +202,7 @@ export default function ResubmitPage() {
             <div className="flex h-16 w-16 animate-pop-in items-center justify-center rounded-full bg-emerald-50">
               <CheckCircle2 className="h-8 w-8 text-emerald-500" />
             </div>
-            <h1 className="mt-5 font-display text-2xl font-extrabold tracking-tight">
+            <h1 className="mt-5 font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
               Resubmitted!
             </h1>
             <p className="mt-2 max-w-[280px] text-sm text-slate-500">
@@ -228,7 +228,7 @@ export default function ResubmitPage() {
 
             <button
               onClick={() => setStep("final_reject")}
-              className="mt-3 text-xs text-slate-500 underline underline-offset-2"
+              className="mt-3 text-[13px] text-slate-500 lg:text-xs underline underline-offset-2"
             >
               Demo: simulate final rejection
             </button>
@@ -241,7 +241,7 @@ export default function ResubmitPage() {
             <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-100">
               <XCircle className="h-8 w-8 text-red-500" />
             </div>
-            <h1 className="mt-5 font-display text-2xl font-extrabold tracking-tight text-red-800">
+            <h1 className="mt-5 font-display text-[22px] font-extrabold tracking-tight lg:text-2xl text-red-800">
               Gig Marked Failed
             </h1>
             <p className="mt-2 max-w-[300px] text-sm text-slate-500">

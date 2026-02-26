@@ -82,7 +82,7 @@ export default function ApplicationsPage() {
         </button>
 
         <div className="mb-6">
-          <h1 className="font-display text-2xl font-extrabold tracking-tight">
+          <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
             Applications
           </h1>
           <p className="mt-1 text-sm text-slate-500">
@@ -114,24 +114,24 @@ export default function ApplicationsPage() {
               key={a.id}
               className={a.status === "rejected" ? "opacity-50" : ""}
             >
-              <CardContent className="p-4">
+              <CardContent className="px-4 py-4 lg:px-5">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent font-display text-sm font-bold text-white">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent font-display text-sm font-bold text-white">
                     {a.avatar}
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="font-display text-sm font-bold">
+                      <span className="font-display text-[15px] font-bold">
                         {a.name}
                       </span>
-                      <Badge className={`text-[10px] ${TIER_STYLES[a.tier]}`}>
+                      <Badge className={`text-[11px] ${TIER_STYLES[a.tier]}`}>
                         Tier {a.tier}
                       </Badge>
                     </div>
-                    <div className="mt-0.5 text-xs text-slate-500">
+                    <div className="mt-0.5 text-[13px] text-slate-500">
                       {a.handle}
                     </div>
-                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
+                    <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5 text-[13px] text-slate-500">
                       <span>{a.followers} followers</span>
                       <span>{a.engagement} eng.</span>
                       <span>{a.platform}</span>
@@ -142,47 +142,51 @@ export default function ApplicationsPage() {
                     </div>
                   </div>
 
-                  {/* Status / Actions */}
-                  <div className="flex flex-shrink-0 items-center gap-1.5">
-                    {a.status === "applied" && (
-                      <>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() =>
-                            setConfirmAction({ applicant: a, action: "reject" })
-                          }
-                          className="h-8 px-2.5 text-xs"
-                          disabled={accepted >= maxSlots}
-                        >
-                          <XCircle className="mr-1 h-3.5 w-3.5" />
-                          Reject
-                        </Button>
-                        <Button
-                          size="sm"
-                          onClick={() =>
-                            setConfirmAction({ applicant: a, action: "accept" })
-                          }
-                          className="h-8 px-2.5 text-xs"
-                          disabled={accepted >= maxSlots}
-                        >
-                          <CheckCircle2 className="mr-1 h-3.5 w-3.5" />
-                          Accept
-                        </Button>
-                      </>
-                    )}
+                  {/* Desktop status badges */}
+                  <div className="hidden flex-shrink-0 items-center gap-1.5 lg:flex">
                     {a.status === "accepted" && (
-                      <Badge className="bg-emerald-50 font-display text-emerald-700">
-                        ✓ Accepted
-                      </Badge>
+                      <Badge className="bg-emerald-50 font-display text-emerald-700">✓ Accepted</Badge>
                     )}
                     {a.status === "rejected" && (
-                      <Badge variant="secondary" className="rounded-full font-display shadow-none text-slate-500">
-                        Rejected
-                      </Badge>
+                      <Badge variant="secondary" className="rounded-full font-display shadow-none text-slate-500">Rejected</Badge>
                     )}
                   </div>
                 </div>
+
+                {/* Actions — full width on mobile, inline on desktop */}
+                {a.status === "applied" && (
+                  <div className="mt-3 flex gap-2 border-t border-slate-100 pt-3 lg:ml-[60px] lg:mt-2 lg:border-0 lg:pt-0">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => setConfirmAction({ applicant: a, action: "reject" })}
+                      className="h-10 flex-1 rounded-xl text-[13px] transition-all duration-200 lg:h-8 lg:flex-none lg:px-3"
+                      disabled={accepted >= maxSlots}
+                    >
+                      <XCircle className="mr-1.5 h-4 w-4 lg:h-3.5 lg:w-3.5" />
+                      Reject
+                    </Button>
+                    <Button
+                      size="sm"
+                      onClick={() => setConfirmAction({ applicant: a, action: "accept" })}
+                      className="h-10 flex-1 rounded-xl text-[13px] transition-all duration-200 lg:h-8 lg:flex-none lg:px-3"
+                      disabled={accepted >= maxSlots}
+                    >
+                      <CheckCircle2 className="mr-1.5 h-4 w-4 lg:h-3.5 lg:w-3.5" />
+                      Accept
+                    </Button>
+                  </div>
+                )}
+                {a.status !== "applied" && (
+                  <div className="mt-3 lg:hidden">
+                    {a.status === "accepted" && (
+                      <Badge className="bg-emerald-50 font-display text-emerald-700">✓ Accepted</Badge>
+                    )}
+                    {a.status === "rejected" && (
+                      <Badge variant="secondary" className="rounded-full font-display shadow-none text-slate-500">Rejected</Badge>
+                    )}
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}

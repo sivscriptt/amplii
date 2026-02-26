@@ -91,7 +91,7 @@ export default function DiscoverPage() {
   return (
     <div className="flex min-h-screen items-start justify-center px-6 pt-6 lg:pt-12">
       <div className="w-full max-w-[560px] pb-16">
-        <h1 className="font-display text-2xl font-extrabold tracking-tight">
+        <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Discover Gigs
         </h1>
         <p className="mt-1 flex items-center gap-1 text-sm text-slate-500">
@@ -130,7 +130,7 @@ export default function DiscoverPage() {
                 onClick={() => !locked && setSelected(g)}
                 className={`transition-all ${locked ? "opacity-50" : "cursor-pointer hover:shadow-md"}`}
               >
-                <CardContent className="p-4">
+                <CardContent className="px-4 py-4 lg:px-5">
                   <div className="flex items-start gap-3">
                     <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 font-display text-sm font-bold text-primary">
                       {g.business_avatar}
@@ -139,28 +139,28 @@ export default function DiscoverPage() {
                       <div className="flex items-center gap-2">
                         <span className="truncate font-display text-sm font-bold">{g.title}</span>
                         {applied.has(g.id) && (
-                          <Badge className="bg-emerald-50 text-[10px] text-emerald-700">Applied</Badge>
+                          <Badge className="bg-emerald-50 text-[11px] text-emerald-700">Applied</Badge>
                         )}
                       </div>
-                      <div className="mt-0.5 text-xs text-slate-500">
+                      <div className="mt-0.5 text-[13px] text-slate-500 lg:text-xs">
                         {g.business} · {g.distance}
                       </div>
                       <div className="mt-2 flex flex-wrap gap-1.5">
-                        <Badge className={`gap-1 text-[10px] ${REWARD_STYLES[g.reward_type]}`}>
+                        <Badge className={`gap-1 text-[11px] ${REWARD_STYLES[g.reward_type]}`}>
                           {REWARD_ICONS[g.reward_type]}
                           {g.reward_type === "paid" ? `MVR ${g.budget.toLocaleString()}` : g.reward_type === "barter" ? "Barter" : "Free"}
                         </Badge>
                         {g.reward_type === "paid" && (
-                          <Badge variant="secondary" className="text-[10px]">
+                          <Badge variant="secondary" className="text-[11px]">
                             {g.base_percent}% / {100 - g.base_percent}%
                           </Badge>
                         )}
-                        <Badge variant="secondary" className="gap-1 text-[10px]">
+                        <Badge variant="secondary" className="gap-1 text-[11px]">
                           <Users className="h-2.5 w-2.5" />
                           {g.slots_filled}/{g.max_slots}
                         </Badge>
                         {locked && (
-                          <Badge variant="secondary" className="text-[10px] text-red-500">
+                          <Badge variant="secondary" className="text-[11px] text-red-500">
                             Tier {g.tier_required} required
                           </Badge>
                         )}
@@ -188,7 +188,7 @@ export default function DiscoverPage() {
                   </div>
                   <div>
                     <div className="font-display text-sm font-bold">{selected.business}</div>
-                    <div className="flex items-center gap-1 text-xs text-slate-500">
+                    <div className="flex items-center gap-1 text-[13px] text-slate-500 lg:text-xs">
                       <Star className="h-3 w-3 fill-amplii-amber text-amplii-amber" />
                       {selected.business_rating} · {selected.distance}
                     </div>
@@ -208,7 +208,7 @@ export default function DiscoverPage() {
                   {selected.reward_type === "paid" && (
                     <Card className="bg-muted/50"><CardContent className="p-3">
                       <div className="font-display text-[11px] font-semibold uppercase text-slate-500">Split</div>
-                      <div className="mt-1 text-sm font-bold">${(selected.budget * selected.base_percent / 100).toFixed(0)} base / ${(selected.budget * (100 - selected.base_percent) / 100).toFixed(0)} completion</div>
+                      <div className="mt-1 text-sm font-bold">MVR {Math.round(selected.budget * selected.base_percent / 100).toLocaleString()} base / MVR {Math.round(selected.budget * (100 - selected.base_percent) / 100).toLocaleString()} completion</div>
                     </CardContent></Card>
                   )}
                   <Card className="bg-muted/50"><CardContent className="p-3">
@@ -229,7 +229,7 @@ export default function DiscoverPage() {
                   ))}
                 </div>
                 {selected.audience_offer && (
-                  <div className="rounded-lg bg-muted p-3 text-xs text-slate-500">
+                  <div className="rounded-lg bg-muted p-3 text-[13px] text-slate-500 lg:text-xs">
                     <span className="font-display font-semibold text-foreground">Audience Offer:</span> {selected.audience_offer}
                   </div>
                 )}

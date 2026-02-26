@@ -54,7 +54,7 @@ function BusinessDashboard({ name }: { name: string }) {
   return (
     <>
       <div>
-        <h1 className="font-display text-2xl font-extrabold tracking-tight">
+        <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Welcome back, {name}
         </h1>
         <p className="mt-1 text-sm text-slate-500">
@@ -65,7 +65,7 @@ function BusinessDashboard({ name }: { name: string }) {
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
           <Card key={s.label}>
-            <CardContent className="p-5">
+            <CardContent className="p-5 lg:p-6">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500">
                   {s.label}
@@ -89,7 +89,7 @@ function BusinessDashboard({ name }: { name: string }) {
       </div>
 
       <div className="mt-6">
-        <h2 className="mb-3 font-display text-base font-bold">Quick Actions</h2>
+        <h2 className="mb-3 font-display text-[15px] font-bold">Quick Actions</h2>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           {actions.map((a) => (
             <Link key={a.href} href={a.href}>
@@ -131,7 +131,7 @@ function InfluencerDashboard({ name }: { name: string }) {
   return (
     <>
       <div>
-        <h1 className="font-display text-2xl font-extrabold tracking-tight">
+        <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Hey, {name}
         </h1>
         <p className="mt-1 text-sm text-slate-500">
@@ -142,7 +142,7 @@ function InfluencerDashboard({ name }: { name: string }) {
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
           <Card key={s.label}>
-            <CardContent className="p-5">
+            <CardContent className="p-5 lg:p-6">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500">
                   {s.label}
@@ -166,7 +166,7 @@ function InfluencerDashboard({ name }: { name: string }) {
       </div>
 
       <div className="mt-6">
-        <h2 className="mb-3 font-display text-base font-bold">Quick Actions</h2>
+        <h2 className="mb-3 font-display text-[15px] font-bold">Quick Actions</h2>
         <div className="grid grid-cols-3 gap-2">
           {actions.map((a) => (
             <Link key={a.href} href={a.href}>
@@ -202,7 +202,7 @@ function AdminDashboard() {
   return (
     <>
       <div>
-        <h1 className="font-display text-2xl font-extrabold tracking-tight">
+        <h1 className="font-display text-[22px] font-extrabold tracking-tight lg:text-2xl">
           Admin Dashboard
         </h1>
         <p className="mt-1 text-sm text-slate-500">
@@ -213,7 +213,7 @@ function AdminDashboard() {
       <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
           <Card key={s.label}>
-            <CardContent className="p-5">
+            <CardContent className="p-5 lg:p-6">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xs font-semibold uppercase tracking-wider text-slate-500">
                   {s.label}
@@ -245,7 +245,7 @@ function AdminDashboard() {
               </div>
               <div>
                 <div className="font-display text-sm font-bold">Review Queue</div>
-                <div className="text-xs text-slate-500">12 submissions waiting</div>
+                <div className="text-[13px] text-slate-500 lg:text-xs">12 submissions waiting</div>
               </div>
             </CardContent>
           </Card>
@@ -258,7 +258,7 @@ function AdminDashboard() {
               </div>
               <div>
                 <div className="font-display text-sm font-bold">Disputes</div>
-                <div className="text-xs text-slate-500">4 open, 2 under review</div>
+                <div className="text-[13px] text-slate-500 lg:text-xs">4 open, 2 under review</div>
               </div>
             </CardContent>
           </Card>
@@ -284,7 +284,7 @@ function RecentActivity({ role }: { role: "business" | "influencer" }) {
 
   return (
     <div className="mt-8">
-      <h2 className="mb-3 font-display text-base font-bold">Recent Activity</h2>
+      <h2 className="mb-3 font-display text-[15px] font-bold">Recent Activity</h2>
       <div className="space-y-2">
         {activities.map((a, i) => (
           <Card key={i}>
@@ -293,7 +293,7 @@ function RecentActivity({ role }: { role: "business" | "influencer" }) {
                 {a.icon}
               </div>
               <div className="min-w-0 flex-1 text-sm">{a.text}</div>
-              <span className="flex-shrink-0 text-xs text-slate-500">
+              <span className="flex-shrink-0 text-[13px] text-slate-500 lg:text-xs">
                 {a.time}
               </span>
             </CardContent>
